@@ -1,0 +1,5 @@
+ul.RecipeList {
+    list-style-type: none;
+    margin: 0;
+    text-align: left;
+}
