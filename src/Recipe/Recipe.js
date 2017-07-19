@@ -5,6 +5,7 @@ import {
   Link
 } from 'react-router-dom'
 import './Recipe.css'
+import RecipeItem from './RecipeItem'
 
 class Recipe extends Component {
     constructor(props) {
@@ -13,9 +14,11 @@ class Recipe extends Component {
     render() {
         const {resource, id} = this.props;
         return (
-            <li className="Recipe-item">
-                <Link key={id} to={{pathname: `/recipe/${id}`}}>{resource.name}</Link>
-            </li>
+            <div>
+                <li className="Recipe-item">
+                    <Link key={id} to={{pathname: `/recipe/${id}`}}>{resource.name}</Link>
+                </li>
+            </div>
         )
     }
 }

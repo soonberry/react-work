@@ -1,23 +1,22 @@
 import React from 'react';
 import {render} from 'react-dom';
-import {BrowserRouter as Router} from 'react-router-dom';
+import {
+    BrowserRouter as Router,
+    Route
+} from 'react-router-dom';
 import './index.css';
-import getRoutes from './routes';
 import registerServiceWorker from './registerServiceWorker';
+import App from './App'
+import RecipeItem from './Recipe/RecipeItem'
 
-let routes = getRoutes();
-
-function renderApp() {
-  render(
+render(
     <Router>
-      <div id="root-app">
-        {routes}
-      </div>
+        <div>
+            <Route exact path="/" component={App} />
+            <Route path="/recipe/:id" component={RecipeItem} />
+        </div>
     </Router>,
     document.getElementById('root'),
-  );
-}
-
-renderApp();
+);
 
 registerServiceWorker();
